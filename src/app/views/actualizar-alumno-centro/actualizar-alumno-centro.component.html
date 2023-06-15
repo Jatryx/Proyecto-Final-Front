@@ -1,0 +1,105 @@
+
+<div class="main" *ngIf="AlumnoCentro">
+    <h2>Actualizar alumno centro</h2>
+  
+    <div class="mainContainer">
+      <div class="mt-4">
+        <hr />
+        <div class="row">
+          <div class="col">
+            <form
+              [formGroup]="updateAlumnoCentroForm"
+              autocomplete="off"
+              (ngSubmit)="save()"
+            >
+              <!-- DNI-->
+              <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">DNI</label>
+                <div class="col-sm-9">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="ejemplo: 11223344A"
+                    formControlName="dni"
+                    readonly
+                  />
+                </div>
+              </div>
+  
+              <!-- Name -->
+              <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Nombre</label>
+                <div class="col-sm-9">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Pepito"
+                    formControlName="nombre"
+                  />
+                </div>
+              </div>
+  
+              <!-- surname -->
+              <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Apellidos</label>
+                <div class="col-sm-9">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Pérez"
+                    formControlName="apellidos"
+                  />
+                </div>
+              </div>
+  
+              <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Clase</label>
+                <div class="col-sm-9">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="1A"
+                    formControlName="clase"
+                  />
+                </div>
+              </div>
+  
+              <!-- phone -->
+              <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Role</label>
+                <div class="col-sm-9">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="678888999"
+                    formControlName="role" readOnly
+                  />
+                </div>
+              </div>
+
+              <!--send and back buttons-->
+              <div class="row">
+                <div class="col">
+                  <button
+                    title="Actualizar el candidato {{ AlumnoCentro.nombre }}"
+                    type="submit"
+                    class="btn btn-primary float-end"
+                  >
+                    Guardar
+                  </button>
+                  <a
+                    title="Volver a la lista de candidatos"
+                    [routerLink]="['/alumnosCentro']"
+                  >
+                    <button type="button" class="btn btn-secondary float-end">
+                      Volver
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

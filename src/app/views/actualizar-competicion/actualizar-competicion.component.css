@@ -1,0 +1,43 @@
+.container>div {
+    margin: 1%;
+}
+
+.btn-primary {
+    background-color: #ff6d43;
+    color: black;
+    border: none;
+    margin-left: 3.5%;
+    margin-bottom: 1%;
+}
+
+.btn-primary:hover {
+    background-color: #ff8361;
+}
+a {text-decoration: none;}
+
+.main {
+    background-color: #D9D9D9;
+    border-radius: 25px;
+    margin: 2.5%;
+    padding-top: 1%;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: -5%;
+    font-weight: bold;
+}
+
+.mainContainer {
+    margin: 2.5%;
+    margin-bottom: 0;
+    padding: 3.5%;
+    padding-bottom: 1%;
+}
+
+.col-form-label {
+    font-weight: bold;
+}
+.checks {
+    margin-left: 1%;
+}

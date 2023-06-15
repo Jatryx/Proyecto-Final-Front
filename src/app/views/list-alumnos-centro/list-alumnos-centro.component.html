@@ -1,0 +1,54 @@
+<div class="container-fluid col-10">
+    <div class="row mainContainer py-3" *ngIf="AlumnosCentro">
+      <div class="row">
+        <div class="d-flex justify-content-between mx-0 py-2 px-0">
+          <div class="">
+            <h4 style="color: #ff6d43; text-align: center">Lista de Candidatos</h4>
+          </div>
+          <div class="">
+            <a title="Añade un nuevo candidato" [routerLink]="['/añadirAlumnoCentro']"><button
+                class="btn btn-primary">Añadir</button></a>
+          </div>
+        </div>
+      </div>
+      <table class="table alignt-items-center col-12">
+        <thead>
+          <tr class="align-top">
+            <th class="bg-deep-blue text-center">Nombre</th>
+            <th class="bg-deep-blue text-center">Apellidos</th>
+            <th class="bg-deep-blue text-center">Clase</th>
+            <th class="bg-deep-blue text-center">Dni</th>
+            <th class="bg-deep-blue text-center">Role</th>
+            <th class="bg-deep-blue text-center">Editar</th>
+            <th class="bg-deep-blue text-center">Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="!loading && !AlumnosCentro[0]">
+            <td colspan="7" class="fst-italic fs-5 text-center">
+              --- Ningún alumno en la base de datos ---
+            </td>
+          </tr>
+          <tr *ngFor="
+              let alumnosCentro of AlumnosCentro
+            " class="border">
+            <td>{{ alumnosCentro.nombre }}</td>
+            <td>{{ alumnosCentro.apellidos }}</td>
+            <td>{{ alumnosCentro.clase }}</td>
+            <td>{{ alumnosCentro.dni }}</td>
+            <td>{{ alumnosCentro.role }}</td>
+            <td>
+              <a title="Edita este candidato" [routerLink]="['/actualizarAlumnoCentro', alumnosCentro.dni]"><button
+                  class="editBtn border">Editar</button></a>
+            </td>
+            <td>
+              <button title="Elimina este candidato" class="btn btn-primary border" (click)="delete(alumnosCentro.dni)">
+                Borrar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+  </div>

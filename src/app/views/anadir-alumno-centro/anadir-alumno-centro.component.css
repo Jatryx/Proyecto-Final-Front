@@ -1,0 +1,46 @@
+
+/* Añadir/Modificar Candidato */
+.btn-primary {
+    background-color: var(--eviden-orange);
+    color: black;
+    border: none;
+    margin-left: 3.5%;
+    margin-bottom: 1%;
+}
+
+
+.main {
+    background-color: #D9D9D9;
+    border-radius: 25px;
+    margin: 2.5%;
+    padding-top: 1%;
+}
+
+.mainContainer {
+    margin: 2.5%;
+    margin-bottom: 0;
+    padding: 3.5%;
+    padding-bottom: 1%;
+}
+
+.col-form-label {
+    font-weight: bold;
+}
+
+.control-label {
+    font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: -5%;
+    font-weight: bold;
+}
+
+.checks {
+    margin-left: 1%;
+}
+
+a{
+    text-decoration: none;
+}

@@ -1,0 +1,49 @@
+<div class="container-fluid col-10">
+    <div class="row mainContainer py-3" *ngIf="Competicion">
+      <div class="row">
+        <div class="d-flex justify-content-between mx-0 py-2 px-0">
+          <div class="">
+            <h4 style="color: #ff6d43; text-align: center">Lista de Competiciones</h4>
+          </div>
+        </div>
+      </div>
+      <table class="table alignt-items-center col-12">
+        <thead>
+          <tr class="align-top">
+            <th class="bg-deep-blue text-center">Nombre Competicion</th>
+            <th class="bg-deep-blue text-center">Numero Jugadores</th>
+            <th class="bg-deep-blue text-center">Fecha Inicio</th>
+            <th class="bg-deep-blue text-center">Fecha Fin</th>
+            <th class="bg-deep-blue text-center">Ganador</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="!loading && !Competicion[0]">
+            <td colspan="7" class="fst-italic fs-5 text-center">
+              --- Ningún alumno en la base de datos ---
+            </td>
+          </tr>
+          <tr *ngFor="
+              let competicion of Competicion
+            " class="border">
+            <td>{{ competicion.nombreCompeticion }}</td>
+            <td>{{ competicion.numeroJugadores }}</td>
+            <td>{{ competicion.fechaInicio | date:'dd/MM/yyyy HH:mm'}}</td>
+            <td>{{ competicion.fechaFin | date:'dd/MM/yyyy HH:mm'}}</td>
+            <ng-container *ngIf="competicion.alumnosRegistrados && competicion.alumnosRegistrados.length > 0">
+                <td>
+                  <p *ngFor="let alumno of competicion.alumnosRegistrados">{{ alumno.dni }}</p>
+                </td>
+              </ng-container>
+              
+              <ng-container *ngIf="!competicion.alumnosRegistrados || competicion.alumnosRegistrados.length === 0">
+                <td>
+                  <p>Ningún alumno registrado</p>
+                </td>
+              </ng-container>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+  </div>

@@ -1,0 +1,60 @@
+
+<ng-container *ngIf="!isSinUrl()" >
+ <ng-container *ngIf="!isLoginPage()" >
+    <ng-container *ngIf="!isFormualrioPage()" >
+      <header>
+        <div class="">
+          <nav class="navbar navbar-expand-xl navbar-light p-4 py-3 pb-1 fw-bold">
+            <a class="navbar-brand" style="margin-left: 10px" href="/home">Interview App
+              <h6 class="small">
+                Usted es
+                <span class="text-orange" *ngIf="getRole()">Admin </span>
+              <span class="" *ngIf="!getRole()">Alumno </span>
+              </h6>
+            </a>
+    
+            <button class="navbar-toggler justify-content-center text-center" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse show justify-content-center" id="navbarNav">
+              <ul class="navbar-nav gap-lg-5 gap-2" data-bs-toggle="expand">
+                <li class="nav-item" *ngIf="getRole()">
+                  <a title="Listado de Alumnos centro" class="nav-link fs-5 text-center"
+                  [routerLink]="['/alumnosCentro']">Listado de Alumnos centro</a>
+                </li>
+                <li class="nav-item" *ngIf="getRole()">
+                  <a title="Alumnos Registrados" class="nav-link fs-5 text-center"
+                  [routerLink]="['/alumnosRegistrados']">Alumnos Registrados</a>
+                </li>
+                <li class="nav-item" *ngIf="getRole()">
+                  <a title="Listado de competiciones con Alumnos" class="nav-link fs-5 text-center"
+                  [routerLink]="['/listCompeticionesAlumnos']">Listado de competiciones</a>
+                </li>
+                
+                <li class="nav-item" *ngIf="!getRole()">
+                  <a title="Competiciones" class="nav-link fs-5 text-center"
+                  [routerLink]="['/misCompeticiones']">Mis competiciones</a>
+                </li>
+
+                <li class="nav-item" *ngIf="!getRole()">
+                  <a title="Mi ResultadoFinal" class="nav-link fs-5 text-center"
+                  [routerLink]="['/miResultadoFinal']">Mis resultado Final</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a title="Perfil" class="nav-link fs-5 text-center"
+                  [routerLink]="['/perfil']">Perfil</a>
+                </li>
+
+                <li class="nav-item">
+                  <a  title="Cerrar Sesion" class="nav-link fs-5 text-center" (click)="logOut()">Cerrar sesión 
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <app-breadcrumbs></app-breadcrumbs>
+    </ng-container>

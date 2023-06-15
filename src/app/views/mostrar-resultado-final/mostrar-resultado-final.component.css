@@ -1,0 +1,150 @@
+.container>div {
+    margin: 1%;
+}
+
+.btn-primary {
+    background-color: #ff6d43;
+    color: black;
+    border: none;
+    margin-left: 3.5%;
+    margin-bottom: 1%;
+}
+
+.btn-primary:hover {
+    background-color: #ff8361;
+}
+a {text-decoration: none;}
+
+.main {
+    background-color: #D9D9D9;
+    border-radius: 25px;
+    margin: 2.5%;
+    padding-top: 1%;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: -5%;
+    font-weight: bold;
+}
+
+.mainContainer {
+    margin: 2.5%;
+    margin-bottom: 0;
+    padding: 3.5%;
+    padding-bottom: 1%;
+}
+
+.col-form-label {
+    font-weight: bold;
+}
+.checks {
+    margin-left: 1%;
+}
+.mainContainer {
+    margin: 0 auto;
+    padding: 1%;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    margin-bottom: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  
+  h4 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--deep-blue);
+  }
+  
+  table {
+    border-collapse: collapse;
+    margin-bottom: 2%;
+    background-color: black;
+    box-shadow: 0 0 10px rgba(168, 163, 163, 0.1);
+  }
+  
+  th,
+  td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+    color: black;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f8f8f8;
+  }
+  
+  
+  .btn {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff6d43;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .editBtn {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border: none;
+    background-color: #ececed;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .editBtn:hover {
+    background-color: #d5d5d5;
+  }
+  
+  .btn:hover {
+    background-color: #be6404;
+  }
+  
+  .bg-deep-blue {
+    background-color: var(--deep-blue);
+    color: white;
+  }
+  
+  .btn-primary {
+    background-color: #ff6d43;
+    color: black;
+    border: none;
+    margin-left: 3.5%;
+    margin-bottom: 1%;
+  }
+  
+  .btn-primary:hover {
+    background-color: #ff8361;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .download__btn {
+    position: relative;
+    left: -150px;
+  }
+  
+  .btnDropdownDownload {
+    border-radius: 0;
+  }
+  

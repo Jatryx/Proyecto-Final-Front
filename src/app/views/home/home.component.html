@@ -1,0 +1,43 @@
+
+<div class="col-11 principalRow">
+  <div class="row align-items-center justify-content-between">
+    <div class="col-4">
+      <div class="row col-12 align-items-center">
+        
+        <form [formGroup]="filtroForm" (ngSubmit)="Filtrar()">
+          <p> Filtro para buscar por nombre de la competicion: </p>
+          <input type="text" formControlName="filtro" placeholder="Buscar competiciones">
+          <button type="submit">Filtrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 row scroll justify-content-center" id="competicionesContainer">
+    <div *ngFor="let qu of competiciones; let i = index" class="card col-6 col-sm-4 col-md-3">
+      <div class="card-body">
+        <p class="card-text statement" id="center">{{ qu.nombreCompeticion }}</p>
+        <p class="card-text">Numero Jugadores: {{ qu.numeroJugadores }} </p>
+        <p class="card-text">Fecha de Inicio: {{ qu.fechaInicio | date: 'dd/MM/yyyy HH:mm' }} </p>
+        <p class="card-text">Fecha de finalización: {{ qu.fechaFin  | date: 'dd/MM/yyyy HH:mm'}} </p>
+        <ng-container>
+          <div *ngIf="getRole()">
+            <p class="card-text">Alumnos Registrados: </p>
+            <div *ngFor="let al of qu.alumnosRegistrados; let i = index">
+              <p class="card-text" >Jugador {{i+1}}: {{al.dni}}</p>
+            </div>
+          </div>
+          <div *ngIf="!getRole()">
+            <form>
+            <div>
+              <button title="Inscribirse" class="btn">
+                <i class="bi bi-trash3" (click)="anadirParticipante(qu.nombreCompeticion)"> Inscribirse </i>
+              </button> 
+            </div>
+          </form>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+  

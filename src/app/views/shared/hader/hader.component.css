@@ -1,0 +1,35 @@
+header {
+    background-image: url("src\assets\img\headerBack.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+  }
+  
+  header .nav-link {
+    color: black;
+  }
+  
+  #profilePicture {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    border: 1px solid #002d3c;
+  }
+  
+  span {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  h6 {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .text-orange {
+    color: #ff6d43;
+  }
+  
+  .dropdown-item:active {
+    background-color: var(--eviden-orange);
+  }

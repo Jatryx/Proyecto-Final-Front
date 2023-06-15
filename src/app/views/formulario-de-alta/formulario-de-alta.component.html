@@ -1,0 +1,81 @@
+
+<div class="main">
+  <h2>Dar de alta un Alumno/Profesor</h2>
+  <div class="mainContainer">
+    <div class="mt-4">
+      <hr />
+      <div class="row">
+        <form class="form" [formGroup]="altaAlumno" (ngSubmit)="save()">
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre"  formControlName="nombre" name="nombre" [(ngModel)]="nombre">
+          </div>
+        
+          <div class="form-group">
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" class="form-control" id="apellidos" formControlName="apellidos" name="apellidos" [(ngModel)]="apellidos">
+          </div>
+        
+          <div class="form-group">
+            <label for="clase">Clase:</label>
+            <input type="text" class="form-control" id="clase" formControlName="clase" name="clase" [(ngModel)]="clase">
+          </div>
+        
+          <div class="form-group">
+            <label for="dni">DNI:</label>
+            <input type="text" class="form-control" id="dni" formControlName="dni" name="dni" [(ngModel)]="dni">
+          </div>
+        
+          <div class="form-group">
+            <label for="rol">Rol:</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="alumnoRadio" formControlName="role" name="role" value="alumno" [(ngModel)]="role">
+              <label class="form-check-label" for="alumnoRadio">
+                Alumno
+              </label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" id="profesorRadio" formControlName="role" name="role" value="profesor" [(ngModel)]="role">
+              <label class="form-check-label" for="profesorRadio">
+                Profesor
+              </label>
+            </div>
+          </div>
+        
+          <div class="form-group">
+            <label for="password">Contraseña:</label>
+            <input type="password" class="form-control" formControlName="password" id="password" name="password" [(ngModel)]="password">
+          </div>
+        
+          <div class="row">
+            <div class="col">
+              <button title="Guardar el candidato" type="submit" class="btn btn-primary float-end">
+                Guardar
+              </button>
+              <a title="Volver a la lista de candidatos" [routerLink]="['/login']">
+                <button type="button" class="btn btn-secondary float-end">
+                  Volver
+                </button>
+              </a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

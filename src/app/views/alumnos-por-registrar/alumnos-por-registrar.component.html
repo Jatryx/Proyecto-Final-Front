@@ -1,0 +1,106 @@
+<div class="container-fluid col-10">
+    <div class="row mainContainer py-3" *ngIf="AlumnosRegistrado">
+      <div class="col-4">
+        <div class="row col-12 align-items-center">
+          
+          <form [formGroup]="filtroForm" (ngSubmit)="Filtrar()">
+            <p> Filtro para buscar por DNI alumno: </p>
+            <input type="text" formControlName="filtro" placeholder="Buscar competiciones">
+            <button type="submit">Filtrar</button>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="d-flex justify-content-between mx-0 py-2 px-0">
+          <div class="">
+            <h4 style="color: #ff6d43; text-align: center">Lista de Personas a registrar</h4>
+          </div>
+          <div class="">
+            <a title="Añade un nuevo candidato" (click)="FiltrarAdmitido('admitido')"><button
+                class="btn btn-primary">Admitido</button></a>
+          </div>
+          <div class="">
+            <a title="Añade un nuevo candidato" (click)="FiltrarAdmitido('no admitido')"><button
+                class="btn btn-primary">No admitido</button></a>
+          </div>
+          <div class="">
+            <a title="Añade un nuevo candidato" (click)="ngOnInit()"><button
+                class="btn btn-primary">Todos</button></a>
+          </div>
+          <br>
+        </div>
+      </div>
+      <table class="table alignt-items-center col-12">
+        <thead>
+          <tr class="align-top">
+            <th class="bg-deep-blue text-center">Nombre</th>
+            <th class="bg-deep-blue text-center">Apellidos</th>
+            <th class="bg-deep-blue text-center">Clase</th>
+            <th class="bg-deep-blue text-center">Dni</th>
+            <th class="bg-deep-blue text-center">Role</th>
+            <th  class="bg-deep-blue text-center">Estado</th>
+            <th  class="bg-deep-blue text-center">Aceptar</th>
+            <th class="bg-deep-blue text-center">Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="!loading && !AlumnosRegistrado[0]">
+            <td colspan="7" class="fst-italic fs-5 text-center">
+              --- Ningún alumno en la base de datos ---
+            </td>
+          </tr>
+          <ng-container *ngFor="let alumnosRegistrado of AlumnosRegistrado" class="border">
+            <ng-container *ngIf="getRole() == 'profesor'">
+              <ng-container *ngIf="alumnosRegistrado.role == 'alumno'">
+                <tr >
+                    <td>{{ alumnosRegistrado.nombre }} </td>
+                    <td>{{ alumnosRegistrado.apellidos }} </td>
+                    <td>{{ alumnosRegistrado.clase }} </td>
+                    <td>{{ alumnosRegistrado.dni }} </td>
+                    <td>{{ alumnosRegistrado.role }} </td>
+                    <td>{{ alumnosRegistrado.estado}} </td>
+                    <td *ngIf="alumnosRegistrado.estado == 'no admitido'">
+                        <button title="Elimina este candidato" class="btn btn-primary border" (click)="aceptarAlumno(alumnosRegistrado.dni)">
+                          Aceptar
+                        </button>
+                    </td>
+                    <td *ngIf="alumnosRegistrado.estado != 'no admitido'">
+                      Ya esta registrado
+                  </td>
+                    <td *ngIf="alumnosRegistrado">
+                      <button title="Elimina este candidato" class="btn btn-primary border" (click)="delete(alumnosRegistrado.dni)">
+                        Borrar
+                      </button>
+                    </td>
+                </tr>
+              </ng-container>
+            </ng-container>
+            <ng-container *ngIf="getRole() == 'admin'">
+                <tr >
+                    <td>{{ alumnosRegistrado.nombre }} </td>
+                    <td>{{ alumnosRegistrado.apellidos }} </td>
+                    <td>{{ alumnosRegistrado.clase }} </td>
+                    <td>{{ alumnosRegistrado.dni }} </td>
+                    <td>{{ alumnosRegistrado.role }} </td>
+                    <td>{{ alumnosRegistrado.estado}} </td>
+                    <td *ngIf="alumnosRegistrado.estado == 'no admitido'">
+                        <button title="Elimina este candidato" class="btn btn-primary border" (click)="aceptarAlumno(alumnosRegistrado.dni)">
+                          Aceptar
+                        </button>
+                    </td>
+                    <td *ngIf="alumnosRegistrado.estado != 'no admitido'">
+                      Ya esta registrado
+                  </td>
+                    <td *ngIf="alumnosRegistrado">
+                      <button title="Elimina este candidato" class="btn btn-primary border" (click)="delete(alumnosRegistrado.dni)">
+                        Borrar
+                      </button>
+                    </td>
+                </tr>
+              </ng-container>
+            </ng-container>
+        </tbody>
+      </table>
+    </div>
+  
+  </div>

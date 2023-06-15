@@ -1,0 +1,36 @@
+#background-image {
+    background-image: url(../../../assets/img/loginWallpaper.png);
+    background-size: cover;
+    margin: 0;
+    height: 100vh;
+  }
+  
+  .bg-orange-eviden {
+    background-color: #ff6d43;
+  }
+  .bg-white {
+    background-color: white;
+  }
+  
+  .form-input {
+    width: 70%;
+    border: 0;
+    border-bottom: 1px solid #000000;
+    transition: border-color 0.2s ease-in-out;
+  }
+  
+  .form-input:hover {
+    border-color: #db6623;
+  }
+  
+  .btn-login {
+    width: 120px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: none;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .btn-login:hover {
+    transform: scale(1.1);
+  }

@@ -1,0 +1,129 @@
+<ng-container *ngIf="resultadoFinal">
+  <div class="main" >
+    
+  <div class="mainContainer">
+    <div class="row">
+      <div class="d-flex justify-content-between mx-0 py-2 px-0">
+        <div class="">
+          <h4 style="color: #ff6d43; text-align: center" >Ganador de la competición {{resultadoFinal.competicion.nombreCompeticion}}</h4>
+        </div>
+      </div>
+    </div>
+    <div class="mt-4">
+      <hr />
+      <div class="row">
+        <div class="col">
+          <form
+            [formGroup]="resultadoFinalList"
+            autocomplete="off"
+          >
+            <!-- DNI-->
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label">Fecha Fin</label>
+              <div class="col-sm-9">
+                <input
+                  type="datetime-local"
+                  class="form-control"
+                  formControlName="fechaFin"
+                  readonly
+                />
+              </div>
+            </div>
+            <!-- Name -->
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label">Nombre de la Competicion</label>
+              <div class="col-sm-9">
+                <input
+                  type="string"
+                  class="form-control"
+                  formControlName="competicion"
+                  readonly
+                />
+              </div>
+            </div>
+
+            <!-- surname -->
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label">Ganador Competencia</label>
+              <div class="col-sm-9">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="ganadorCompetencia"
+                  readonly
+                />
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-3 col-form-label">Competidores</label>
+              <div class="col-sm-9">
+                <ng-container *ngFor="let alumno of alumnosCompetidores.alumnosRegistrados">
+                 
+                  <div class="mb-3 row">
+                    <label class="col-sm-3 col-form-label">{{alumno.dni}} con el Nombre {{alumno.nombre}}</label>
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <button title="Borrar resultado final" type="submit" class="btn btn-primary float-end" (click)="delete()">
+                  Borrar
+                </button>
+                <a
+                  title="Volver a la lista de candidatos"
+                  [routerLink]="['/listCompeticionesAlumnos']"
+                >
+                  <button type="button" class="btn btn-secondary float-end">
+                    Volver
+                  </button>
+                </a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</ng-container>
+<ng-container *ngIf="!resultadoFinal">
+<div class="row mainContainer py-3" x>
+    <div class="row">
+      <div class="d-flex justify-content-between mx-0 py-2 px-0">
+        <div class="">
+          <h4 style="color: #ff6d43; text-align: center" *ngIf="!resultadoFinal">Lista de Competidores</h4>
+        </div>
+      </div>
+    </div>
+    <table class="table alignt-items-center col-12">
+      <thead>
+        <tr class="align-top">
+          <th class="bg-deep-blue text-center">Dni</th>
+          <th class="bg-deep-blue text-center">Nombre</th>
+          <th class="bg-deep-blue text-center">Clase</th>
+          <th class="bg-deep-blue text-center">Ganador</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="!loading && !alumnosCompetidores.alumnosRegistrados[0]">
+          <td colspan="7" class="fst-italic fs-5 text-center">
+            --- Ningún alumno en la base de datos ---
+          </td>
+        </tr>
+        <tr *ngFor="
+            let al of alumnosCompetidores.alumnosRegistrados
+          " class="border">
+          <td>{{ al.dni }}</td>
+          <td>{{ al.nombre }}</td>
+          <td>{{ al.clase}}</td>
+          <td>
+            <button title="Elimina este candidato" class="btn btn-primary border" (click)="ganador(al.dni)">
+              Ganador
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+</ng-container>

@@ -1,0 +1,96 @@
+div>div>div>* {
+  box-sizing: border-box;
+}
+
+.card-text {
+  margin-top: 1.5%;
+}
+
+.statement {
+  font-weight: bold;
+}
+
+img {
+  height: 50px;
+}
+
+.principalRow {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.row {
+  margin-top: 1.5%;
+}
+
+select {
+  background-color: #f1f1f1;
+}
+
+.scroll {
+  background-color: #D9D9D9;
+  padding: 1.5%;
+  overflow-y: scroll;
+  margin-bottom: 2.5%;
+  box-shadow: 2px 2px 7px var(--deep-blue);
+  border-radius: 10px;
+}
+
+.scroll>div {
+  margin: 1.5%;
+}
+
+.no-button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+}
+
+.btn-primary {
+  background-color: #ff6d43;
+  color: black;
+  border: none;
+  box-sizing: border-box;
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
+.btn-primary:hover {
+  background-color: #ff8361;
+}
+
+.bi {
+  font-size: 2em;
+}
+
+.mr {
+  margin-right: 3%
+}
+
+.col-1 {
+  margin-left: 1%;
+}
+
+.bi:hover {
+  text-shadow: 1px 1px 3px var(--deep-blue);
+}
+
+.no-button:hover {
+  animation: r 4s normal;
+}
+
+@keyframes r {
+0% {
+  transform: rotateY(0deg);
+}
+100% {
+  transform: rotateY(360deg)
+}
+}
+
+#center{
+  text-align: center;
+  font-size: 35px;
+}
