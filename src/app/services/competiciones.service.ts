@@ -9,7 +9,7 @@ import { AlumnoRegistrado } from '../interfaces/alumnoRegistrado';
 })
 export class CompeticionesService {
 
-  private apiURL = "http://localhost:8040/api/v0/competiciones/";
+  private apiURL = "http://backtfg-env.eba-zg8rkiyc.us-east-1.elasticbeanstalk.com/api/v0/competiciones/";
 
   constructor(private http: HttpClient) { }
 

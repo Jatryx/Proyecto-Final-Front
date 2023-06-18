@@ -11,7 +11,7 @@ export class AlumnosRegistradosService {
 
   constructor(private http:HttpClient) { }
 
-  private apiURL = "http://localhost:8040/api/v0/alumnosregistrados/";
+  private apiURL = "http://backtfg-env.eba-zg8rkiyc.us-east-1.elasticbeanstalk.com/api/v0/alumnosregistrados/";
 
   crearAlumnoRegistrado(data: FormData){
     return this.http.post(`${this.apiURL}`,data);

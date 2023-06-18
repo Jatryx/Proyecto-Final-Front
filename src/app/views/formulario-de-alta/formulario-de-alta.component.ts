@@ -41,6 +41,7 @@ save() {
 
     const alumnoRegistrado: any = this.altaAlumno.value;
 
+    console.log(this.alumnoRegistradoService.crearAlumnoRegistrado(alumnoRegistrado));
     this.alumnoRegistradoService.crearAlumnoRegistrado(alumnoRegistrado).subscribe(
       (res: any) => {
         Swal.fire('Alumno creado', '', 'success').then(() => {

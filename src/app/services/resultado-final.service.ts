@@ -7,7 +7,7 @@ import { ResultadoFinal } from '../interfaces/resultadoFinal';
 })
 export class ResultadoFinalService {
 
-  private apiURL = "http://localhost:8040/api/v0/resultadofinal/";
+  private apiURL = "http://backtfg-env.eba-zg8rkiyc.us-east-1.elasticbeanstalk.com/api/v0/resultadofinal/";
 
   constructor(private http: HttpClient) { }
 

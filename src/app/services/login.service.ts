@@ -8,7 +8,7 @@ import { AlumnoRegistrado } from '../interfaces/alumnoRegistrado';
 })
 export class LoginService {
 
-  private apiURL = "http://localhost:8040/api/v0/alumnosregistrados/";
+  private apiURL = "http://backtfg-env.eba-zg8rkiyc.us-east-1.elasticbeanstalk.com/api/v0/alumnosregistrados/";
 
   constructor(private router:Router,private http: HttpClient) { }
 

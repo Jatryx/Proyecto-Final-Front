@@ -7,7 +7,7 @@ import { AlumnosCentro } from '../interfaces/alumnoCentro';
 })
 export class AlumnosCentroService {
 
-  private apiURL = "http://localhost:8040/api/v0/alumnoscentro/";
+  private apiURL = "http://backtfg-env.eba-zg8rkiyc.us-east-1.elasticbeanstalk.com/api/v0/alumnoscentro/";
 
   constructor(private http: HttpClient) { }
 
